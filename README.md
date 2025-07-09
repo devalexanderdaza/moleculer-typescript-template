@@ -190,14 +190,14 @@ Consistent response format across all services:
 
 ```json
 {
-  "success": true,
-  "message": "Operation completed successfully",
-  "data": {},
-  "pagination": {
-    "page": 1,
-    "limit": 10,
-    "total": 0
-  }
+    "success": true,
+    "message": "Operation completed successfully",
+    "data": {},
+    "pagination": {
+        "page": 1,
+        "limit": 10,
+        "total": 0
+    }
 }
 ```
 

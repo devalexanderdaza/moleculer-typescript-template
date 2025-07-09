@@ -1,5 +1,3 @@
 {
-    "recommendations": [
-        "pavittarx.moleculer-snippets"
-    ]
+  "recommendations": ["pavittarx.moleculer-snippets"]
 }

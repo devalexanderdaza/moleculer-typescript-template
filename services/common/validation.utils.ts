@@ -10,22 +10,22 @@ import { logger } from "../../logger";
  * @throws {Errors.ValidationError} When validation fails
  */
 export const validateParams = <T extends z.ZodRawShape>(
-	ctx: Context<unknown, Record<string, unknown>, GenericObject>,
-	schema: T
+    ctx: Context<unknown, Record<string, unknown>, GenericObject>,
+    schema: T,
 ): void => {
-	const compiled = z.object(schema).strict();
-	try {
-		const parsedParams = compiled.parse(ctx.params);
-		logger.info("Validated parameters: %o", parsedParams);
-	} catch (err) {
-		if (err instanceof z.ZodError) {
-			throw new Errors.ValidationError(
-				"Parameters validation error!",
-				"VALIDATION_ERROR",
-				err.issues
-			);
-		}
+    const compiled = z.object(schema).strict();
+    try {
+        const parsedParams = compiled.parse(ctx.params);
+        logger.info("Validated parameters: %o", parsedParams);
+    } catch (err) {
+        if (err instanceof z.ZodError) {
+            throw new Errors.ValidationError(
+                "Parameters validation error!",
+                "VALIDATION_ERROR",
+                err.issues,
+            );
+        }
 
-		throw err;
-	}
+        throw err;
+    }
 };
